@@ -1,4 +1,9 @@
-﻿  Natural_Language.cpp
-c:\users\ricsi\desktop\natural_language_word_gutenberg\natural_language\natural_language.cpp(35): warning C4018: '<': signed/unsigned mismatch
-c:\users\ricsi\desktop\natural_language_word_gutenberg\natural_language\natural_language.cpp(142): warning C4018: '<': signed/unsigned mismatch
-  Natural_Language.vcxproj -> C:\Users\ricsi\Desktop\Natural_Language_word_gutenberg\Debug\Natural_Language.exe
+﻿  stdafx.cpp
+  pcg_basic.cpp
+c:\users\ricsi\documents\github\natural-language\natural_language_word_gutenberg\natural_language\pcg_basic.cpp(64): warning C4244: 'initializing': conversion from 'uint64_t' to 'uint32_t', possible loss of data
+  Natural_Language.cpp
+c:\users\ricsi\documents\github\natural-language\natural_language_word_gutenberg\natural_language\natural_language.cpp(35): warning C4018: '<': signed/unsigned mismatch
+c:\users\ricsi\documents\github\natural-language\natural_language_word_gutenberg\natural_language\natural_language.cpp(142): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+  Natural_Language.vcxproj -> C:\Users\ricsi\Documents\GitHub\Natural-language\Natural_Language_word_gutenberg\Debug\Natural_Language.exe
+  Natural_Language.vcxproj -> C:\Users\ricsi\Documents\GitHub\Natural-language\Natural_Language_word_gutenberg\Debug\Natural_Language.pdb (Full PDB)
