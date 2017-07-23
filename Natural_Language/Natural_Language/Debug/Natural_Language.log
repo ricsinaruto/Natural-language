@@ -1,7 +1,4 @@
-﻿  stdafx.cpp
-  pcg_basic.cpp
-c:\users\ricsi\documents\github\natural-language\natural_language\natural_language\pcg_basic.cpp(64): warning C4244: 'initializing': conversion from 'uint64_t' to 'uint32_t', possible loss of data
-  Natural_Language.cpp
+﻿  Natural_Language.cpp
 c:\users\ricsi\documents\github\natural-language\natural_language\natural_language\natural_language.cpp(25): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
 c:\users\ricsi\documents\github\natural-language\natural_language\natural_language\natural_language.cpp(41): warning C4018: '<': signed/unsigned mismatch
 c:\users\ricsi\documents\github\natural-language\natural_language\natural_language\natural_language.cpp(43): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
@@ -15,6 +12,5 @@ c:\users\ricsi\documents\github\natural-language\natural_language\natural_langua
 c:\users\ricsi\documents\github\natural-language\natural_language\natural_language\natural_language.cpp(62): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
 c:\users\ricsi\documents\github\natural-language\natural_language\natural_language\natural_language.cpp(64): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
 c:\users\ricsi\documents\github\natural-language\natural_language\natural_language\natural_language.cpp(71): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-  Generating Code...
   Natural_Language.vcxproj -> C:\Users\ricsi\Documents\GitHub\Natural-language\Natural_Language\Debug\Natural_Language.exe
   Natural_Language.vcxproj -> C:\Users\ricsi\Documents\GitHub\Natural-language\Natural_Language\Debug\Natural_Language.pdb (Full PDB)

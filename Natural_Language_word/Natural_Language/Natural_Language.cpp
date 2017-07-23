@@ -2111,7 +2111,6 @@ void thread9()
 
 }
 
-//kéne még egy fájlba elmenteni a beszélgetéseket, hogy legyen komolyabb memóriája
 int main(int argc, char* argv[])
 {
 	unique_lock<std::mutex> lck(mtx); // needed so the threads cannot finish befor wait

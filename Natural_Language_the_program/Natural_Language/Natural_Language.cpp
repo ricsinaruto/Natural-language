@@ -12,7 +12,7 @@ public:
 };
 szavak szo[10000];
 
-//kéne még egy fájlba elmenteni a beszélgetéseket, hogy legyen komolyabb memóriája
+//should save conversations to a file to have longer memory
 int main(int argc, char* argv[])
 {
 	cout << "hey" << "\n";
@@ -53,12 +53,12 @@ int main(int argc, char* argv[])
 
 
 	filebe.open("szoRank_file_szavak.txt");
-	//wordlist feltöltés
+	//fill the wordlist
 	int teszt = 0;
 	string sor = "";
 	while (getline(filebe, sor))
 	{
-		//string kezelés
+		//string handling
 		for (int i = 0; i < sor.length(); i++)
 		{
 			if (sor[i] == ';')
@@ -74,13 +74,13 @@ int main(int argc, char* argv[])
 	cout << teszt<<endl;
 
 	filebe.open("kettosRelaciok.txt");
-	//kettosRelaciok feltöltés
+	//fill bigrams
 	teszt = 0;
 	sor = "";
 	while (getline(filebe, sor))
 	{
 		int vesszo = 0;
-		//string kezelés
+		//string handling
 		for (int i = 0; i < sor.length(); i++)
 		{
 			if (sor[i] == ';')
@@ -98,16 +98,17 @@ int main(int argc, char* argv[])
 	}
 	filebe.close();
 	cout << teszt<<endl;
+	//cout << kettosRelaciok[0][1] << ";" << kettosRelaciok[1][1] << ";" << kettosRelaciok[2][1] << endl;
 
 	filebe.open("harmasRelaciok.txt");
-	//harmasRelaciok feltöltés
+	//fill trigrams
 	teszt = 0;
 	sor = "";
 	while (getline(filebe, sor))
 	{
 		int vesszo = 0;
 		int vesszo1 = 0;
-		//string kezelés
+		//string handling
 		for (int i = 0; i < sor.length(); i++)
 		{
 			if (sor[i] == ';'&&vesszo == 0)
@@ -132,7 +133,7 @@ int main(int argc, char* argv[])
 	cout << teszt << endl;
 
 	filebe.open("negyesRelaciok.txt");
-	//negyesRelaciok feltöltés
+	//fill 4-grams
 	teszt = 0;
 	sor = "";
 	while (getline(filebe, sor))
@@ -140,7 +141,7 @@ int main(int argc, char* argv[])
 		int vesszo = 0;
 		int vesszo1 = 0;
 		int vesszo2 = 0;
-		//string kezelés
+		//string handling
 		for (int i = 0; i < sor.length(); i++)
 		{
 			if (sor[i] == ';'&&vesszo == 0)
@@ -170,7 +171,7 @@ int main(int argc, char* argv[])
 	cout << teszt << endl;
 
 	filebe.open("otosRelaciok.txt");
-	//otosRelaciok feltöltés
+	//fil 5-grams
 	teszt = 0;
 	sor = "";
 	while (getline(filebe, sor))
@@ -179,7 +180,7 @@ int main(int argc, char* argv[])
 		int vesszo1 = 0;
 		int vesszo2 = 0;
 		int vesszo3 = 0;
-		//string kezelés
+		//string handling
 		for (int i = 0; i < sor.length(); i++)
 		{
 			if (sor[i] == ';'&&vesszo == 0)
@@ -220,22 +221,42 @@ int main(int argc, char* argv[])
 	
 	int karakterek[400] = { 0 };
 	int space = 1;
-
-	for (int i = 0; i < 1000; i++)
+	string first_word = "this";
+	cout << first_word;
+	for (int i = 0; i < 20; i++)
 	{
 		string s;
-		getline(cin, s);
+		string retrieved_word;
+		//getline(cin, s);
 		
+		// TODO: language generation from n-grams
 
-		int valaszmeret = 0;
-		while (valaszmeret<2) valaszmeret = (((double)pcg32_boundedrand_r(&rng, 1000000000)) / 250000000+1);
+		int valaszmeret = (((double)pcg32_boundedrand_r(&rng, 1000000000)) / 250000000 + 1);
 		
+		
+		bool found = false;
+		int count = 0;
+		while (!found) {
+			if (szo[count].szo == first_word) found = true;
+			count++;
+		}
+		int word = count - 1;
+		count = 0;
+		found = false;
+		int prob = 0;
+		while (!found) {
+			if (kettosRelaciok[0][count] == word && kettosRelaciok[2][count] > prob) {
+				prob = kettosRelaciok[2][count];
+				retrieved_word=szo[kettosRelaciok[2][count]].szo;
+			}
+			if (kettosRelaciok[0][count] > word) found = true;
+			count++;
+		}
 
-	
 
-
-		cout << "\n";
+		cout << " "<<retrieved_word;
 		space = 1;
+		first_word = retrieved_word;
 	}
 	
 

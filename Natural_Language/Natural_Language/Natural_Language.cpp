@@ -2,7 +2,7 @@
 
 using namespace std;
 
-//kéne még egy fájlba elmenteni a beszélgetéseket, hogy legyen komolyabb memóriája
+//save conversations to a file to have longer memory
 int main(int argc, char* argv[])
 {
 	cout << "hey" << "\n";
@@ -37,7 +37,7 @@ int main(int argc, char* argv[])
 					nullaegy[k+szam] = (((double)pcg32_boundedrand_r(&rng, 1000000000)) / 1000000000+0.5) * ((double)szam / abs((double)k));
 					oszto += (double)szam / abs((double)k);
 					
-					//különbözõ esetek, hogy kezelje a problémákat a bekért meg kijött string nagysága közt
+					//to handle differences between input and output string size
 					if (j + k >= 0 && j + k < s.length())
 					{
 						if (s[j + k] != 32)				karakterek[j] += (double)s[j + k] * nullaegy[k + szam];
@@ -76,7 +76,7 @@ int main(int argc, char* argv[])
 				//cout << karakterek[j] << "\n";
 				cout << c;
 
-				//random szám generálás
+				//rng
 				double z = 0;
 				double xr=0, yr=0;
 				while (z <= 0 || z >= 1)
@@ -87,7 +87,7 @@ int main(int argc, char* argv[])
 
 				}
 
-				//gaussian random szám
+				//gaussian random number
 				double distro = 5 + xr * 1 * sqrt(-2 * log(z) / z);
 
 				if ((double)j / space > distro) { cout << " "; space++; }

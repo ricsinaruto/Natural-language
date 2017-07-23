@@ -31,7 +31,7 @@ void thread0()
 		
 		fileki.open("google.txt");
 
-			//string kezelés
+			//string handling
 			for (int i = 0; i < sor.length(); i++)
 			{
 				if (sor[i] == ';')
@@ -42,7 +42,7 @@ void thread0()
 			}
 
 
-			//HACKELÉS
+			//HACKing
 			if (teszt == 0)
 			{
 				output = "";
